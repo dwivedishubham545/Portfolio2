@@ -101,6 +101,12 @@ let resumeData = {
     ],
     "portfolio":[
       {
+        "imgurl":"image/hostel.png",
+        "url":"https://github.com/dwivedishubham545/Hostel-Management/",
+        "name":"Hostel Management",
+        "description":"DBMS Project(Full Stack)"
+      },
+      {
         "imgurl":"image/travel.jpg",
         "url":"https://dwivedishubham545.github.io/Travel/",
         "name":"Travel",
@@ -123,6 +129,12 @@ let resumeData = {
         "description":"Web Application",  
         "imgurl":"image/covid.avif",
         "url":"https://dwivedishubham545.github.io/Covid/"
+      },
+      {
+        "name":"To-Do List",
+        "description":"Web Application",  
+        "imgurl":"image/to-do.png",
+        "url":"https://github.com/dwivedishubham545/OIBSIP/tree/main/To-Do%20List/"
       },
     ],
     "testimonials":[
