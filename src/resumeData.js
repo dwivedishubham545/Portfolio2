@@ -136,6 +136,18 @@ let resumeData = {
         "imgurl":"image/to-do.png",
         "url":"https://github.com/dwivedishubham545/OIBSIP/tree/main/To-Do%20List/"
       },
+     {
+        "name":"Basic Computer",
+        "description":"Logisim Circuit",  
+        "imgurl":"image/Basic.png",
+        "url":"https://github.com/dwivedishubham545/Computer-1-Computer-Organisation/"
+      },
+     {
+        "name":"Microprogrammed Control Computer",
+        "description":"Logisim Circuit",  
+        "imgurl":"image/Micro.png",
+        "url":"https://github.com/dwivedishubham545/Computer-2-Computer-Organisation/"
+      },
     ],
     "testimonials":[
       {
