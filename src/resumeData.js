@@ -49,7 +49,7 @@ let resumeData = {
           "imgurl":"image/hackerrank.png"
         }
       ],
-    "aboutme":"I am currently a pre-final year student at University Institute of Engineering and Technology, CSJMU Kanpur and pursuing my B.Tech from here. I am a self taught Front End Web Developer, Competitive Programmer. I believe that to be successful in life, one needs to be obsessive with their dreams and keep working towards them.",
+    "aboutme":"I am currently a final year student at University Institute of Engineering and Technology, CSJMU Kanpur and pursuing my B.Tech from here. I am a self taught Front End Web Developer, Competitive Programmer. I believe that to be successful in life, one needs to be obsessive with their dreams and keep working towards them.",
     "address":"Kanpur , India",
     "website":"dwivedishubham545@gmail.com",
     "education":[
