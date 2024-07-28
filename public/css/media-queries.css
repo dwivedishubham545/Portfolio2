@@ -19,6 +19,8 @@
       margin: 0 auto 12px auto;
    }
 
+   #resume .cpi {text-align: center;}  
+
 }
 
 /* screenwidth less than 900px
@@ -60,7 +62,8 @@
    /* Resume Section
    ------------------------------------------------------------------- */
    #resume h1 { font: 16px/24px 'opensans-bold', sans-serif; }
-   #resume .main-col { padding-right: 5%; }   
+   #resume .main-col { padding-right: 5%; } 
+   #resume .cpi {text-align: center;}  
 
    /* Testimonials Section
    ------------------------------------------------------------------- */
@@ -234,6 +237,8 @@
    #resume h1 { letter-spacing: 3px; }
    #resume .main-col { padding-right: 30px; }
    #resume h3, #resume .info { text-align: center; }
+   #resume .cpi {text-align: center;}  
+
       
    .bars { width: 100%; }
 
