@@ -116,7 +116,7 @@ let resumeData = {
         "name":"E-Commerce",
         "description":"Web Application",
         "imgurl":"image/ecommerce.jpg",
-        "url":"https://dwivedishubham545.github.io/e-commerce/"
+        "url":"https://github.com/dwivedishubham545/Myshop"
       },
       {
         "name":"Weather",
