@@ -113,7 +113,7 @@ let resumeData = {
         "description":"Web Application"
       },
       {
-        "name":"E-Commerce",
+        "name":"Myshop",
         "description":"Web Application",
         "imgurl":"image/ecommerce.jpg",
         "url":"https://github.com/dwivedishubham545/Myshop"
