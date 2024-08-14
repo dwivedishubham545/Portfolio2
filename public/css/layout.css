@@ -1,7 +1,7 @@
 /*
 =====================================================================
 *   Ceevee v1.0 Layout Stylesheet
-*   url: styleshout.com
+*   url: styleshout.comp
 *   03-18-2014
 =====================================================================
 
@@ -21,7 +21,9 @@
 /* ------------------------------------------------------------------ */
 /* a. General Styles
 /* ------------------------------------------------------------------ */
-
+*{
+   box-sizing: border-box;
+}
 body { background: #0f0f0f; }
 
 /* ------------------------------------------------------------------ */
@@ -93,9 +95,12 @@ header .social li {
    display: inline-block;
    margin: 0 15px;
    padding: 0;
+
 }
 header .social li a { color: #fff; }
-header .social li a:hover { color: #11ABB0; }
+header .social li a:hover { 
+   color: #11ABB0;
+}
 
 /* scrolldown link */
 header .scrolldown a {
@@ -161,25 +166,55 @@ ul#nav li {
 
 /* Links */
 ul#nav li a {
-
-/* 8px padding top + 8px padding bottom + 32px line-height = 48px */
-
+   /* Basic styling for links */
    display: inline-block;
-   padding: 8px 13px;
+   padding: 8px 20px;
    line-height: 32px;
-	text-decoration: none;
+   text-decoration: none;
    text-align: left;
-   color: #fff;
-
-	-webkit-transition: color .2s ease-in-out;
-	-moz-transition: color .2s ease-in-out;
-	-o-transition: color .2s ease-in-out;
-	-ms-transition: color .2s ease-in-out;
-	transition: color .2s ease-in-out;
+   color: #08834e; /* Initial text color */
+   position: relative; /* Ensure pseudo-element is positioned relative to the link */
+   overflow: hidden; /* Hide the overflowing animation effect */
+   
+   /* Set initial state for opacity and scale */
+   opacity: 0.8;
+   transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
 }
 
-ul#nav li a:active { background-color: transparent !important; }
-ul#nav li.current a { color: #F06000; }
+/* Add the pseudo-element for the background */
+ul#nav li a::before {
+   content: '';
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   width: 90%;
+   height: 80%;
+   background-color: transparent; /* Initially transparent */
+   border-radius: 12px; /* Rounded corners */
+   transform: translate(-50%, -50%) scale(1); /* Center and scale initially */
+   z-index: 0; /* Position behind the link text */
+   transition: background-color 1.5s ease-in-out; /* Smooth background color transition */
+}
+
+/* Animate the pseudo-element on hover */
+ul#nav li a:hover::before {
+   background-color: rgba(246, 240, 240, 0.236); /* Background color on hover */
+}
+
+ul#nav li a:hover {
+   color: rgb(175, 48, 48); /* Change text color on hover */
+}
+
+/* Active state */
+ul#nav li a:active {
+   background-color: transparent !important;
+}
+
+/* Current state */
+ul#nav li.current a {
+   color: #F06000;
+}
+
 
 
 /* ------------------------------------------------------------------ */
@@ -214,7 +249,7 @@ ul#nav li.current a { color: #F06000; }
 #about .contact-details { width: 41.66667%; }
 #about .download {
    width: 58.33333%;
-   padding-top: 6px;
+   padding-top: 2px;
 }
 #about .main-col { padding-right: 5%; }
 #about .download .button {
@@ -235,48 +270,48 @@ ul#nav li.current a { color: #F06000; }
 /* d. Resume Section
 /* ------------------------------------------------------------------ */
 
-#resume {
+#education {
    background: #fff;
    padding-top: 90px;
    padding-bottom: 72px;
    overflow: hidden;
 }
 
-#resume a, #resume a:visited  { color: #11ABB0; }
-#resume a:hover, #resume a:focus { color: #313131; }
+#education a, #education a:visited  { color: #11ABB0; }
+#education a:hover, #education a:focus { color: #313131; }
 
-#resume h1 {
+#education h1 {
    font: 18px/24px 'opensans-bold', sans-serif;
    text-transform: uppercase;
    letter-spacing: 1px;
 }
-#resume h1 span {
+#education h1 span {
    border-bottom: 3px solid #11ABB0;
    padding-bottom: 6px;
 }
-#resume h3 {
+#education h3 {
    font: 25px/30px 'opensans-bold', sans-serif;
 }
 
-#resume .header-col { padding-top: 9px; }
-#resume .main-col { padding-right: 10%; }
+#education .header-col { padding-top: 9px; }
+#education .main-col { padding-right: 10%; }
 
 .education, .work {
    margin-bottom: 48px;
    padding-bottom: 24px;
    border-bottom: 1px solid #E8E8E8;
 }
-#resume .info {
+#education .info {
    font: 16px/24px 'librebaskerville-italic', serif;
    color: #6E7881;
    margin-bottom: 18px;
    margin-top: 9px;
 }
-#resume .info span {
+#education .info span {
    margin-right: 5px;
    margin-left: 5px;
 }
-#resume .date {
+#education .date {
    font: 15px/24px 'opensans-regular', sans-serif;
    margin-top: 6px;
 }
@@ -377,16 +412,44 @@ ul#nav li.current a { color: #F06000; }
 }
 
 /* on hover */
-.portfolio-item:hover .overlay {
-	opacity: 1;
-	-moz-opacity: 1;
-	filter:alpha(opacity=100);
+
+ /* Initial state with transition */
+.portfolio-item .overlay,
+.portfolio-item .link-icon {
+    opacity: 0;
+    -moz-opacity: 0;
+    filter: alpha(opacity=0);
+
+    /* Add transition for smooth appearance */
+    transition: opacity 0.3s ease;
 }
+
+/* Hover state with transition */
+.portfolio-item:hover .overlay,
 .portfolio-item:hover .link-icon {
-   opacity: 1;
-	-moz-opacity: 1;
-	filter:alpha(opacity=100);
+    opacity: 1;
+    -moz-opacity: 1;
+    filter: alpha(opacity=100);
 }
+
+/* Define keyframes for animation */
+@keyframes fadeIn {
+   0% {
+       opacity: 0;
+       transform: scale(0) rotate(0deg); /* Start with scale 0 and no rotation */
+   }
+   100% {
+       opacity: 0.7;
+       transform: scale(1.05) rotate(6deg); /* End with scale 1.05 and rotation of 15 degrees */
+   }
+}
+
+/* Apply the animation on hover */
+.portfolio-item:hover .overlay,
+.portfolio-item:hover .link-icon {
+    animation: fadeIn 1s ease-in-out forwards;
+}
+
 
 /* popup modal */
 .popup-modal {
@@ -663,6 +726,165 @@ call-to-action .button {
 /* h. Contact Section
 /* ------------------------------------------------------------------ */
 
+/* General layout styles */
+
+.overlay-mf {
+   position: absolute;
+   top: 0;
+   left: 0px;
+   padding: 0;
+   height: 100%;
+   width: 100%;
+   opacity: .7;
+ }
+ 
+ .paralax-mf {
+   position: relative;
+   padding: 8rem 0;
+ }
+
+.container {
+   position: relative;
+   z-index: 2;
+}
+
+.roww{
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: space-between;
+}
+
+.col-md-6 {
+   flex: 1;
+   max-width: 40% 60%;
+   padding: 20px;
+   box-sizing: border-box;
+}
+.contain {
+   max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  /* border: 1px solid #ccc; */
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: #f9f9f9;
+  transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+.contain:hover {
+   transform: translateY(-10px) scale(1.01) rotate(1deg);
+}
+
+.form-group {
+   position: relative;
+   margin-bottom: 15px;
+   width: 100%;
+}
+
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+   .roww {
+       flex-direction: column;
+   }
+   .col-md-6 {
+       max-width: 100%;
+   }
+}
+
+.title-box-2 {
+   margin-bottom: 20px;
+   border-bottom: 2px solid #007bff;
+   display: inline-block;
+   padding-bottom: 5px;
+}
+
+.contactForm {
+   background: #fff;
+   padding: 20px;
+   border-radius: 8px;
+   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+   margin-bottom: 5px;
+   /* width: 100%; */
+}
+
+.form-control {
+   width: 100%;
+   padding: 5px;
+   border: 1px solid #ccc;
+   border-radius: 4px;
+   box-sizing: border-box;
+}
+.form-control:hover {
+   border-color: #66afe9;
+   box-shadow: 0 0 8px rgba(102, 175, 233, 0.6);
+   outline: none;
+   transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+ }
+ .btn {
+   padding: 10px 20px;
+   border: none;
+   border-radius: 4px;
+   background-color: #007bff;
+   color: #fff;
+   cursor: pointer;
+   transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+ }
+ 
+ /* Button Hover and Active Styles */
+ .btn:hover {
+   background-color: #0056b3;
+   transform: scale(1.05);
+ }
+ 
+ .btn:active {
+   background-color: #004085;
+   transform: scale(0.95);
+ }
+/* .button-a {
+   background: #007bff;
+   color: #fff;
+   padding: 10px 20px;
+   border: none;
+   border-radius: 4px;
+   cursor: pointer;
+   text-transform: uppercase;
+   font-weight: bold;
+   display: inline-block;
+   margin-top: auto;
+}
+
+.button-a:hover {
+   background: #0056b3;
+} */
+
+.more-info .lead {
+   margin-bottom: 20px;
+   color: #000;
+}
+
+
+
+.footer-paralax {
+   padding: 20px 0;
+   color: #fff;
+   background: #000;
+}
+
+.box-pl2 {
+   padding-left: 2rem;
+ }
+ 
+ .box-shadow-full {
+   padding: 3rem 1.25rem;
+  position: relative;
+  background-color: #fff;
+  margin-bottom: 3rem;
+  z-index: 2;
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.06), 0 2px 5px 0 rgba(0, 0, 0, 0.2);
+ }
 
 
 /* ------------------------------------------------------------------ */
@@ -670,8 +892,8 @@ call-to-action .button {
 /* ------------------------------------------------------------------ */
 
 footer {
-   padding-top: 48px;
-   margin-bottom: 48px;
+   padding-top: 20px;
+   margin-bottom: 20px;
    color: #303030;
    font-size: 14px;
    text-align: center;
@@ -724,36 +946,60 @@ footer .social-links li:first-child { margin-left: 0; }
 /* Code links */
 
 
-#code .codeLink{
+#code .codeLink {
    background-color: white;
    text-align: center;
+   padding: 0;
+   font-size: 30px;
 }
-#code .codeLink ul{
+
+#code .codeLink ul {
    margin: auto;
    padding: 50px;
 }
-#code .codeLink {
-   padding: 0;
-   font-size: 30px;
-} 
-#code .codeLink img{
+
+#code .codeLink img {
    height: 40px;
    width: 40px;
    border-radius: 10px;
+   position: relative; /* Position relative to contain pseudo-element */
+   z-index: 1; /* Keep the image above the pseudo-element */
+   transition: transform 0.5s ease-in-out; /* Smooth transition for scaling */
 }
 
 #code .codeLink li {
-    display: inline-block;
-    margin: 0;
-    padding: 0;
-    margin: 30px;
-    color: #F06000;
+   display: inline-block;
+   margin: 30px;
+   padding: 0;
+   color: #F06000;
+   position: relative; /* Position relative to contain pseudo-element */
 }
 
-#code .codeLink ul :hover{
-    transform: scale(1.2);
-    transition-duration: 1.5s;
+#code .codeLink li:hover img {
+   transform: scale(1.2);
+   transform: rotate(20deg);
 }
+
+#code .codeLink li::before {
+   content: '';
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%) scale(0);
+   width: 80px; /* Increased size for the circle */
+   height: 80px;
+   background-color: rgba(240, 96, 0, 0.3); /* Faded orange color */
+   border-radius: 50%;
+   z-index: 0; /* Keep the circle behind the image */
+   transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+   opacity: 0;
+}
+
+#code .codeLink li:hover::before {
+   transform: translate(-50%, -50%) scale(1);
+   opacity: 1;
+}
+
 
 /* Go To Top Button */
 #go-top {
@@ -782,4 +1028,17 @@ footer .social-links li:first-child { margin-left: 0; }
  	border-radius: 100%;
 }
 #go-top a:hover { background-color: #0F9095; }
+
+
+
+
+
+ @media (min-width: 767px) {
+   .contact-mf .box-pl2 {
+     margin-top: 3rem;
+     padding-left: 0rem;
+   }
+}
+
+/* Animation over all text */
 

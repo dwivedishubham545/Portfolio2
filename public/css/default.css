@@ -457,6 +457,16 @@ img.pull-left { margin: 12px 18px 0px 0px; }
 
 /*  6. Buttons  --------------------------------------------------------- */
 
+/* Define the fade-out keyframes */
+@keyframes fadeOut {
+   from {
+       opacity: 1;
+   }
+   to {
+       opacity: 0.5; /* Adjust opacity as needed */
+   }
+}
+
 .button,
 .button:visited,
 button,
@@ -464,27 +474,21 @@ input[type="submit"],
 input[type="reset"],
 input[type="button"] {
    font: 16px/30px 'opensans-bold', sans-serif;
-   background: #11ABB0;
+   background: #6d7374;
    display: inline-block;
-	text-decoration: none;
+   text-decoration: none;
    letter-spacing: 0;
    color: #fff;
-	padding: 12px 20px;
-	margin-bottom: 18px;
+   padding: 8px 20px;
+   margin-bottom: 18px;
    border: none;
    cursor: pointer;
    height: auto;
+   border-radius: 3px; /* Unified border-radius property */
+   transition: background .4s ease-in-out, color .4s ease-in-out, opacity .4s ease-in-out, transform .4s ease-in-out;
 
-   -webkit-transition: all .2s ease-in-out;
-	-moz-transition: all .2s ease-in-out;
-	-o-transition: all .2s ease-in-out;
-	-ms-transition: all .2s ease-in-out;
-	transition: all .2s ease-in-out;
-
-   -moz-border-radius: 3px;
-   -webkit-border-radius: 3px;
-   -khtml-border-radius: 3px;
-   border-radius: 3px;
+   /* Initialize opacity */
+   opacity: 1;
 }
 
 .button:hover,
@@ -494,6 +498,9 @@ input[type="reset"]:hover,
 input[type="button"]:hover {
    background: #3d4145;
    color: #fff;
+   opacity: 0.7; /* Slightly transparent on hover */
+   transform: scale(1.05); /* Slightly increase the size */
+   animation: fadeOut 0.4s ease-in-out; /* Apply the fade-out animation */
 }
 
 .button:active,
@@ -503,7 +510,10 @@ input[type="reset"]:active,
 input[type="button"]:active {
    background: #3d4145;
    color: #fff;
+   opacity: 0.8; /* Keep opacity slightly reduced on active */
+   transform: scale(1); /* Ensure button returns to normal size when clicked */
 }
+
 
 .button.full-width,
 button.full-width,
@@ -535,7 +545,7 @@ input[type="email"],
 textarea,
 select {
    display: block;
-   padding: 18px 15px;
+   padding: 12px 15px;
    margin: 0 0 24px 0;
    border: 0;
    outline: none;
@@ -602,7 +612,7 @@ input[type="checkbox"] { display: inline; }
 
 .narrow .row { max-width: 980px; }
 
-.row .row { width: auto; max-width: none; margin: 0 -20px; }
+.row .row { width: auto; max-width: none }
 
 /* row clearing */
 .row:before,
@@ -801,7 +811,3 @@ properly.
 	margin-right: auto !important;
 	text-align: center !important;
 }
-
-
-
-

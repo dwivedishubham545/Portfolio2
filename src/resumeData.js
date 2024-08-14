@@ -35,7 +35,7 @@ let resumeData = {
         },
         {
           "name":"GeekforGeeks",
-          "url":"https://auth.geeksforgeeks.org/user/dwivedishr3yj",
+          "url":"https://auth.geeksforgeeks.org/user/dwivedishubham545",
           "imgurl":"image/gfg.png"
         },
         {
