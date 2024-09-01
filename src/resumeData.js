@@ -101,22 +101,34 @@ let resumeData = {
     ],
     "portfolio":[
       {
+        "imgurl":"image/Blog.png",
+        "url":"https://github.com/dwivedishubham545/Blog-App/",
+        "name":"Blog Application",
+        "description":"MERN Stack"
+      },
+      {
         "imgurl":"image/hostel.png",
         "url":"https://github.com/dwivedishubham545/Hostel-Management/",
         "name":"Hostel Management",
         "description":"DBMS Project(Full Stack)"
       },
       {
-        "imgurl":"image/travel.jpg",
-        "url":"https://dwivedishubham545.github.io/Travel/",
-        "name":"Travel",
-        "description":"Web Application"
+        "name":"Code-Editor",
+        "description":"Web Application",
+        "imgurl":"image/code-editor.png",
+        "url":"https://github.com/dwivedishubham545/code-editor"
       },
       {
         "name":"Myshop",
         "description":"Web Application",
         "imgurl":"image/ecommerce.jpg",
         "url":"https://github.com/dwivedishubham545/Myshop"
+      },
+      {
+        "imgurl":"image/travel.jpg",
+        "url":"https://dwivedishubham545.github.io/Travel/",
+        "name":"Travel",
+        "description":"Web Application"
       },
       {
         "name":"Weather",
@@ -139,13 +151,13 @@ let resumeData = {
      {
         "name":"Basic Computer",
         "description":"Logisim Circuit",  
-        "imgurl":"image/Basic.png",
+        "imgurl":"image/Logisim.png",
         "url":"https://github.com/dwivedishubham545/Computer-1-Computer-Organisation/"
       },
      {
         "name":"Microprogrammed Control Computer",
         "description":"Logisim Circuit",  
-        "imgurl":"image/Micro.png",
+        "imgurl":"image/Logisim.png",
         "url":"https://github.com/dwivedishubham545/Computer-2-Computer-Organisation/"
       },
     ],

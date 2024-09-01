@@ -517,6 +517,38 @@ ul#nav li.current a {
    opacity: 0;
 }
 
+
+/* Simplified Testing CSS */
+@media (max-width: 768px) {
+   #portfolio-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      gap: auto; /* Adjust gap between items if needed */
+   }
+   
+   .portfolio-item {
+      flex: 1 1 calc(50% - 1.5em); /* Two items per row */
+      box-sizing: border-box; /* Include padding in width calculation */
+      margin-bottom: auto; /* Gap between rows */
+   }
+}
+
+@media (max-width: 480px) {
+   #portfolio-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      gap: auto; /* Adjust gap between items if needed */
+   }
+   
+   .portfolio-item {
+      flex: 1 1 calc(50% - 1.5em); /* Two items per row */
+      box-sizing: border-box; /* Include padding in width calculation */
+      margin-bottom: auto; /* Gap between rows */
+   }
+}
+
+
+
 /* ------------------------------------------------------------------ */
 /* f. Call To Action Section
 /* ------------------------------------------------------------------ */
@@ -789,6 +821,7 @@ call-to-action .button {
    .col-md-6 {
        max-width: 100%;
    }
+   
 }
 
 .title-box-2 {
