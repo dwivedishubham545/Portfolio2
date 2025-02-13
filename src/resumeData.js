@@ -58,7 +58,7 @@ let resumeData = {
         "specialization":"Computer Science and Engineering",
         "MonthOfPassing":"May",
         "YearOfPassing":"2025",
-        "Achievements":"CPI: 9.78"
+        "Achievements":"CPI: 9.81"
       },
       {
         "UniversityName":"Prasad International School",

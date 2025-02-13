@@ -23,7 +23,7 @@ export default class About extends Component {
                   <br></br>
                   <span>{resumeData.website}</span>
                 </p>
-                <a href="https://drive.google.com/file/d/1VYgltJRvV8xXTyrlN1tYF_INpqN0lU8M/view?usp=sharing" target="_blank">
+                <a href="https://drive.google.com/file/d/1X-1Eg2b9H43fUcK_YktyKpoGmCmEXpbQ/view?usp=sharing" target="_blank">
                   <button>Resume</button>
                 </a>
               </div>
